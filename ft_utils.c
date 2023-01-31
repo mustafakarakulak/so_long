@@ -6,7 +6,7 @@
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:02:48 by bsamli            #+#    #+#             */
-/*   Updated: 2023/01/31 14:44:40 by mkarakul         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:23:10 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ int	ft_keyboard(int keyhook, t_data *data)
 {
 	ft_putimages(data);
 	if (keyhook == 53)
-		exit(1);
+	{
+		ft_printf("Oyun başarıyla kapatıldı!");
+		exit(0);
+	}
 	if (data->coin == 0 && (((keyhook == 2 || keyhook == 124)
 				&& data->map[data->position_y][data->position_x + 1] == 'E') \
 			|| ((keyhook == 125 || keyhook == 1) && data->map[data->position_y
