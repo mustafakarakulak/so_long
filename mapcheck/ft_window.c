@@ -6,7 +6,7 @@
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 01:41:03 by mkarakul          #+#    #+#             */
-/*   Updated: 2023/01/31 13:51:22 by mkarakul         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:59:45 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	ft_window(t_data *data)
 			&data->imgy);
 	data->img[4] = mlx_xpm_file_to_image(data->mlx, EXT, &data->imgx,
 			&data->imgy);
-	data->img[5] = mlx_xpm_file_to_image(data->mlx, PLY2, &data->imgx,
-			&data->imgy);
 	hookles(data);
 }
 
@@ -41,6 +39,7 @@ void	hookles(t_data *data)
 	ft_putimages(data);
 	player_num_control(data);
 	mlx_hook(data->mlx_window, 2, 0, ft_keyboard, data);
+	mlx_hook(data->mlx_window, 17, 0, ft_mouse_window, data);
 	mlx_loop(data->mlx);
 }
 

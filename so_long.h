@@ -6,7 +6,7 @@
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:03:29 by bsamli            #+#    #+#             */
-/*   Updated: 2023/01/30 19:56:43 by mkarakul         ###   ########.fr       */
+/*   Updated: 2023/01/31 16:54:03 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # define     BLC "xpms/wall.xpm"
 # define     COIN "xpms/rose.xpm"
 # define     EXT	"xpms/sahse.xpm"
-# define	 PLY2	"xpms/player_left.xpm"
 
 # include <stdarg.h>
 # include <stdlib.h>
@@ -75,6 +74,7 @@ void	top_left_wall_control(t_data *data);
 void	right_bottom_wall_control(t_data *data);
 void	playable_control(t_data *data);
 void	map_checking(t_data *data);
+int		ft_mouse_window(int key);
 
 void	line_control(t_data *data);
 void	collectable_control(t_data *data);

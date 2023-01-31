@@ -6,7 +6,7 @@ SRCS =  so_long.c \
 		mapcheck/ft_mapread.c mapcheck/ft_general_control.c lib/ft_calloc.c \
 		lib/ft_bzero.c lib/ft_memset.c  mapcheck/ft_window.c ft_move.c mapcheck/ft_playable_control.c \
 		mapcheck/ft_wall_control.c mapcheck/ft_control_map_check.c lib/ft_printf.c lib/ft_source.c ft_utils.c \
-		ft_utils1.c
+		ft_utils1.c mapcheck/ft_mouse_window.c
 
 
 Y = "\033[33m"
