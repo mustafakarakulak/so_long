@@ -6,7 +6,7 @@
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:26:40 by mkarakul          #+#    #+#             */
-/*   Updated: 2023/01/31 16:32:25 by mkarakul         ###   ########.fr       */
+/*   Updated: 2023/02/01 23:08:06 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_mouse_window(int key)
 {
 	(void)key;
-	ft_printf("Oyun başarıyla kapatıldı!");
+	ft_printf("Oyun başarıyla kapatıldı!\n");
 	exit (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wall_control.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsamli <bsamli@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 20:14:13 by macos             #+#    #+#             */
-/*   Updated: 2023/01/16 13:52:23 by bsamli           ###   ########.fr       */
+/*   Created: 2022/12/22 20:14:13 by mkarakul          #+#    #+#             */
+/*   Updated: 2023/02/04 14:04:45 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	top_left_wall_control(t_data *data)
 	{
 		if (data->map[i][0] != '1')
 		{
-			ft_printf("Left wall error");
+			ft_printf("Sol duvarda hata var!");
 			exit(1);
 		}
 		i++;
@@ -31,7 +31,7 @@ void	top_left_wall_control(t_data *data)
 	{
 		if (data->map[0][i] != '1')
 		{
-			ft_printf("Top wall error");
+			ft_printf("Üst duvarda hata var!");
 			exit(1);
 		}
 		i++;
@@ -47,7 +47,7 @@ void	right_bottom_wall_control(t_data *data)
 	{
 		if (data->map[i][data->mat_x - 1] != '1')
 		{
-			ft_printf("Right wall error");
+			ft_printf("Sağ duvarda hata var!");
 			exit(1);
 		}
 		i++;
@@ -57,7 +57,7 @@ void	right_bottom_wall_control(t_data *data)
 	{
 		if (data->map[data->mat_y - 1][i] != '1')
 		{
-			ft_printf("Under wall error");
+			ft_printf("Alt duvarda hata var!");
 			exit(1);
 		}
 		i++;
@@ -68,7 +68,7 @@ void	playable_control(t_data *data)
 {
 	if (data->collectnum < 1 || data->exit != 1)
 	{
-		ft_printf("Not playable");
+		ft_printf("Harita oynanabilir değil!");
 		exit(1);
 	}
 }

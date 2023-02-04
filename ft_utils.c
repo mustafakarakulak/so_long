@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 14:02:48 by bsamli            #+#    #+#             */
-/*   Updated: 2023/01/31 16:25:57 by mkarakul         ###   ########.fr       */
+/*   Created: 2023/02/04 14:07:07 by mkarakul          #+#    #+#             */
+/*   Updated: 2023/02/04 14:07:10 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ void	can_go_exit(t_data *data)
 		"Gul Sayisi: ");
 	mlx_string_put(data->mlx, data->mlx_window, 92, 35, 00000000, coin);
 	free(coin);
+	free(step);
 	if (data->coin == 0)
 	{
 		mlx_string_put(data->mlx, data->mlx_window, 5, 55, 0xFF0000,
-			"Oyunu tamamlamak icin sevgiline gitmelisin.");
+			"Oyunu tamamlamak icin kapıya gitmelisin.");
 	}
 }
 
@@ -79,7 +80,7 @@ int	ft_keyboard(int keyhook, t_data *data)
 	ft_putimages(data);
 	if (keyhook == 53)
 	{
-		ft_printf("Oyun başarıyla kapatıldı!");
+		ft_printf("Oyun başarıyla kapatıldı!\n");
 		exit(0);
 	}
 	if (data->coin == 0 && (((keyhook == 2 || keyhook == 124)
@@ -92,9 +93,9 @@ int	ft_keyboard(int keyhook, t_data *data)
 				- 1][data->position_x] == 'E')))
 	{
 		ft_printf("Adım Sayısı: %d\n", data->step + 1);
-		ft_printf("Tebrikler! Sevgiline ulaştın!\n");
+		ft_printf("Tebrikler! Oyunu tamamladın!\n");
 		free(data->img);
-		exit(1);
+		exit(0);
 	}
 	ft_key_hook(keyhook, data);
 	hookles(data);

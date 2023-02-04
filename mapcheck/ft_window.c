@@ -6,7 +6,7 @@
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 01:41:03 by mkarakul          #+#    #+#             */
-/*   Updated: 2023/01/31 18:59:45 by mkarakul         ###   ########.fr       */
+/*   Updated: 2023/02/04 14:03:19 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,22 @@ void	ft_window(t_data *data)
 {
 	data->mlx = mlx_init();
 	data->mlx_window = mlx_new_window(data->mlx, data->width * 64, data->height
-			* 64, "so_long");
-	data->img[0] = mlx_xpm_file_to_image(data->mlx, PLYR, &data->imgx,
+			* 64, "so_long game");
+	data->player_img[0] = mlx_xpm_file_to_image(data->mlx, PLY, &data->imgx,
 			&data->imgy);
-	data->img[1] = mlx_xpm_file_to_image(data->mlx, GR, &data->imgx,
+	data->player_img[1] = mlx_xpm_file_to_image(data->mlx, PLYA, &data->imgx,
 			&data->imgy);
-	data->img[2] = mlx_xpm_file_to_image(data->mlx, BLC, &data->imgx,
+	data->player_img[2] = mlx_xpm_file_to_image(data->mlx, PLYD, &data->imgx,
 			&data->imgy);
-	data->img[3] = mlx_xpm_file_to_image(data->mlx, COIN, &data->imgx,
+	data->player_img[3] = mlx_xpm_file_to_image(data->mlx, PLYW, &data->imgx,
 			&data->imgy);
-	data->img[4] = mlx_xpm_file_to_image(data->mlx, EXT, &data->imgx,
+	data->img[0] = mlx_xpm_file_to_image(data->mlx, GR, &data->imgx,
+			&data->imgy);
+	data->img[1] = mlx_xpm_file_to_image(data->mlx, BLC, &data->imgx,
+			&data->imgy);
+	data->img[2] = mlx_xpm_file_to_image(data->mlx, COIN, &data->imgx,
+			&data->imgy);
+	data->img[3] = mlx_xpm_file_to_image(data->mlx, EXT, &data->imgx,
 			&data->imgy);
 	hookles(data);
 }
@@ -51,15 +57,15 @@ void	ft_putimages(t_data *data)
 		data->mat_x = 0;
 		while (data->map[data->mat_y][data->mat_x])
 		{
-			mlx_put_image_to_window(data->mlx, data->mlx_window, data->img[1],
+			mlx_put_image_to_window(data->mlx, data->mlx_window, data->img[0],
 				data->mat_x * 64, data->mat_y * 64);
 			if (data->map[data->mat_y][data->mat_x] == '1')
 				mlx_put_image_to_window(data->mlx, data->mlx_window,
-					data->img[2], data->mat_x * 64, data->mat_y * 64);
+					data->img[1], data->mat_x * 64, data->mat_y * 64);
 			if (data->map[data->mat_y][data->mat_x] == 'P')
 			{
 				mlx_put_image_to_window(data->mlx, data->mlx_window,
-					data->img[0], data->mat_x * 64, data->mat_y * 64);
+						data->player_img[data->player_c], data->mat_x * 64, data->mat_y * 64);
 				data->position_x = data->mat_x;
 				data->position_y = data->mat_y;
 				data->player_num++;
@@ -77,17 +83,14 @@ void	ft_putimages1(t_data *data, int mat_x, int mat_y)
 	if (data->map[data->mat_y][mat_x] == 'C')
 	{
 		mlx_put_image_to_window(data->mlx, data->mlx_window,
-			data->img[3], mat_x * 64, mat_y * 64);
+			data->img[2], mat_x * 64, mat_y * 64);
 		data->coin++;
 	}
-	if (data->map[mat_y][mat_x] == 'E')
+	else if (data->map[mat_y][mat_x] == 'E')
 	{
 		mlx_put_image_to_window(data->mlx, data->mlx_window,
-			data->img[4], mat_x * 64, mat_y * 64);
+			data->img[3], mat_x * 64, mat_y * 64);
 	}
-	if (data->map[mat_y][mat_x] == '0')
-		mlx_put_image_to_window(data->mlx, data->mlx_window,
-			data->img[1], mat_x * 64, mat_y * 64);
 }
 
 void	ft_key_hook(int keyhook, t_data *data)

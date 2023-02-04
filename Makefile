@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/04 14:07:25 by mkarakul          #+#    #+#              #
+#    Updated: 2023/02/04 14:07:26 by mkarakul         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = so_long
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g -L./mlx -lmlx -I./printf -framework AppKit -framework OpenGL
@@ -39,7 +51,6 @@ $(NAME): $(MINI) $(OBJS)
 clean:
 	@rm -rf ${OBJS}
 	@echo $(R)Removed [$(OBJS)]$(B)
-	@make clean -C mlx/
 
 fclean: clean
 	@rm -rf ${NAME}

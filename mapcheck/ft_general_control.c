@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 01:40:41 by macos             #+#    #+#             */
-/*   Updated: 2023/01/30 15:19:53 by mkarakul         ###   ########.fr       */
+/*   Created: 2023/01/14 01:40:41 by mkarakul          #+#    #+#             */
+/*   Updated: 2023/02/01 15:58:44 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	exit_check(char *map[])
 		}
 		i++;
 	}
-	ft_printf("Kapi Yok!");
+	ft_printf("Kapı Yok!");
 	exit(1);
 }
 

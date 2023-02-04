@@ -5,19 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 14:03:29 by bsamli            #+#    #+#             */
-/*   Updated: 2023/01/31 16:54:03 by mkarakul         ###   ########.fr       */
+/*   Created: 2023/02/04 14:07:34 by mkarakul          #+#    #+#             */
+/*   Updated: 2023/02/04 14:07:41 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# define     PLYR "xpms/mami.xpm"
-# define     GR "xpms/game_ground.xpm"
-# define     BLC "xpms/wall.xpm"
-# define     COIN "xpms/rose.xpm"
-# define     EXT	"xpms/sahse.xpm"
+# define	PLY		"xpms/player/player.xpm"
+# define	GR		"xpms/ground.xpm"
+# define	BLC		"xpms/wall.xpm"
+# define	COIN	"xpms/coin.xpm"
+# define	EXT		"xpms/door.xpm"
+# define	PLYA	"xpms/player/player-left-stop.xpm"
+# define	PLYD	"xpms/player/player-right-stop.xpm"
+# define	PLYW	"xpms/player/player-up-stop.xpm"
 
 # include <stdarg.h>
 # include <stdlib.h>
@@ -47,6 +50,8 @@ typedef struct s_data
 	int		coin;
 	int		exit;
 	int		player_num;
+	int		player_c;
+	void	**player_img;
 }				t_data;
 
 int		find_player_x(char *map[]);

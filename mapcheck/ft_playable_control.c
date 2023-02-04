@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_playable_control.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsamli <bsamli@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 01:40:45 by macos             #+#    #+#             */
-/*   Updated: 2023/01/16 13:49:30 by bsamli           ###   ########.fr       */
+/*   Created: 2023/01/14 01:40:45 by mkarakul          #+#    #+#             */
+/*   Updated: 2023/02/04 14:04:52 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	line_control(t_data *data)
 			j++;
 		if (j != flag)
 		{
-			ft_printf("Map length error!");
+			ft_printf("Harita uzunluk hatası!");
 			exit(1);
 		}
 		i++;
@@ -52,8 +52,7 @@ void	collectable_control(t_data *data)
 		{
 			if (data->map[i][j] == 'C' && data->controlmap[i][j] != '.')
 			{
-				ft_printf("Unreachable coin. Coordinate : x = %d, \
-                    y = %d", j, i);
+				ft_printf("Koordinatı: x = %d, y = %d", i + 1, j + 1);
 				exit(1);
 			}
 			j++;
@@ -66,7 +65,17 @@ void	door_control(t_data *data)
 {
 	if (data->exit > 1)
 	{
-		ft_printf("There are exit more than one!");
+		ft_printf("Birden fazla çıkış var!");
 		exit(1);
 	}
+/* 	else if (data->position_x + 1 || data->position_x - 1 == 'E')
+	{
+		ft_printf("Kapı yüzünden token'a ulaşılamıyor\n");
+		exit(1);
+	}
+	else if (data->position_y + 1 || data->position_y - 1 == 'E')
+	{
+		ft_printf("Kapı yüzünden token'a ulaşılamıyor\n");
+		exit(1);
+	} */
 }

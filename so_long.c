@@ -6,7 +6,7 @@
 /*   By: mkarakul <mkarakul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 01:35:34 by mkarakul          #+#    #+#             */
-/*   Updated: 2023/01/31 14:48:59 by mkarakul         ###   ########.fr       */
+/*   Updated: 2023/02/01 23:55:56 by mkarakul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,16 @@ int	main(int argc, char **argv)
 			return (0);
 		data = ft_calloc(sizeof(t_data), 1);
 		data->key = 1;
-		data->img = (void **)ft_calloc(sizeof(void *), 6);
+		data->img = (void **)ft_calloc(sizeof(void *), 9);
+		data->player_img = (void **)ft_calloc(sizeof(void *), 4);
+		data->player_c = 0;
 		mapreader(data, argv[1]);
 		map_checking(data);
 		ft_window(data);
 	}
 	else
 	{
-		ft_printf("Wrong input type. -./so_long map.ber-");
+		ft_printf("Yanlış girdi. Doğru kullanım: ./so_long map.ber\n");
 		exit(1);
 	}
 	free(data->img);
